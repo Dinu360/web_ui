@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eyeglasses Selection - Vision Near</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: #fafafa; }
+    .sidebar {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid #eee;
+      min-height: 100%;
+    }
+    .product-card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 18px;
+      background: #fff;
+      transition: box-shadow 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .product-card:hover {
+      box-shadow: 0 6px 24px rgba(0, 191, 255, 0.13);
+      transform: translateY(-4px);
+    }
+    .product-image {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #f0f0f0;
+    }
+    .color-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      border: 1px solid #ccc;
+    }
+	  .navbar {
+      background-color: #008080 !important;
+    }
+    .navbar-brand, .nav-link, .navbar-nav .nav-link.active {
+      color: #fff !important;
+    }
+    .color-multicolor { background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet); }
+    .color-black { background-color: black; }
+    .color-white { background-color: white; border: 1px solid #ddd; }
+    .color-brown { background-color: #a0522d; }
+    .color-blue { background-color: #007bff; }
+    .color-gray { background-color: gray; }
+    .color-orange { background-color: orange; }
+    .color-silver { background-color: #ccc; }
+    .color-green { background-color: #28a745; }
+    .faq-section {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      padding: 32px 18px;
+      margin-top: 48px;
+      margin-bottom: 32px;
+    }
+    .faq-question {
+      font-weight: bold;
+      margin-top: 1.5rem;
+    }
+    .faq-answer {
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 991px) {
+      .sidebar { margin-bottom: 24px; }
+    }
+  </style>
+</head>
+<body>
+	<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">VisionNear</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon" style="color:#fff;"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#locator">Locator</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container py-5">
+    <h1 class="mb-4 text-left"><strong>Select Your Eyeglasses</strong></h1>
+    <div class="row">
+      <!-- Sidebar Filters -->
+      <div class="col-lg-3 mb-4">
+        <div class="sidebar">
+          <h5 class="mb-3">Shop by</h5>
+          <div class="accordion" id="filterAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSize">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSize">
+                  Size
+                </button>
+              </h2>
+              <div id="collapseSize" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div><input type="checkbox" id="sizeSmall"> <label for="sizeSmall">Small</label></div>
+                  <div><input type="checkbox" id="sizeMedium"> <label for="sizeMedium">Medium</label></div>
+                  <div><input type="checkbox" id="sizeLarge"> <label for="sizeLarge">Large</label></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingShape">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShape">
+                  Shape
+                </button>
+              </h2>
+              <div id="collapseShape" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div><input type="checkbox" id="shapeRound"> <label for="shapeRound">Round</label></div>
+                  <div><input type="checkbox" id="shapeRectangle"> <label for="shapeRectangle">Rectangle</label></div>
+                  <div><input type="checkbox" id="shapeCatEye"> <label for="shapeCatEye">Cat Eye</label></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingColor">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseColor">
+                  Color
+                </button>
+              </h2>
+              <div id="collapseColor" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div><input type="checkbox" id="colorBlack"> <label for="colorBlack">Black</label></div>
+                  <div><input type="checkbox" id="colorSilver"> <label for="colorSilver">Silver</label></div>
+                  <div><input type="checkbox" id="colorMulticolor"> <label for="colorMulticolor">Multicolor</label></div>
+                  <div><input type="checkbox" id="colorOrange"> <label for="colorOrange">Orange</label></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingMaterial">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMaterial">
+                  Material
+                </button>
+              </h2>
+              <div id="collapseMaterial" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div><input type="checkbox" id="materialMetal"> <label for="materialMetal">Metal</label></div>
+                  <div><input type="checkbox" id="materialPlastic"> <label for="materialPlastic">Plastic</label></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingRim">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRim">
+                  Rim
+                </button>
+              </h2>
+              <div id="collapseRim" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div><input type="checkbox" id="rimFull"> <label for="rimFull">Full Rim</label></div>
+                  <div><input type="checkbox" id="rimHalf"> <label for="rimHalf">Half Rim</label></div>
+                  <div><input type="checkbox" id="rimRimless"> <label for="rimRimless">Rimless</label></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingPrice">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrice">
+                  Price
+                </button>
+              </h2>
+              <div id="collapsePrice" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div><input type="checkbox" id="priceUnder30"> <label for="priceUnder30">Under $30</label></div>
+                  <div><input type="checkbox" id="price30to50"> <label for="price30to50">$30 - $50</label></div>
+                  <div><input type="checkbox" id="priceAbove50"> <label for="priceAbove50">Above $50</label></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFit">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFit">
+                  Fit
+                </button>
+              </h2>
+              <div id="collapseFit" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div><input type="checkbox" id="fitWide"> <label for="fitWide">Wide</label></div>
+                  <div><input type="checkbox" id="fitNarrow"> <label for="fitNarrow">Narrow</label></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingExtra">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExtra">
+                  Extra Feature
+                </button>
+              </h2>
+              <div id="collapseExtra" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div><input type="checkbox" id="featureBlueLight"> <label for="featureBlueLight">Blue Light</label></div>
+                  <div><input type="checkbox" id="featurePhotochromic"> <label for="featurePhotochromic">Photochromic</label></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Product Grid -->
+      <div class="col-lg-9">
+        <div class="row g-4">
+          <!-- Product 1 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.32.52_96e8be81.jpg" alt="St Michel" width="640" height="320" class="product-image" />
+              <h5 class="mt-3">St Michel <span class="text-primary">$49</span></h5>
+              <p class="mb-1">Multicolor</p>
+              <div class="mb-2">
+                <span class="color-circle color-multicolor" title="Multicolor"></span>
+                <span class="color-circle color-white" title="White"></span>
+                <span class="color-circle color-black" title="Black"></span>
+                <span class="color-circle color-brown" title="Brown"></span>
+              </div>
+              <button class="btn btn-outline-primary mt-auto w-100">Try-on</button>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.32.52_1c5f2abd.jpg" alt="Ember" class="product-image" />
+              <h5 class="mt-3">Ember <span class="text-primary">$23</span></h5>
+              <p class="mb-1">Silver</p>
+              <div class="mb-2">
+                <span class="color-circle color-silver" title="Silver"></span>
+                <span class="color-circle color-black" title="Black"></span>
+              </div>
+              <button class="btn btn-outline-primary mt-auto w-100">Try-on</button>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.32.44_77540491.jpg" alt="Amity" class="product-image" />
+              <h5 class="mt-3">Amity <span class="text-primary">$33</span></h5>
+              <p class="mb-1">Orange</p>
+              <div class="mb-2">
+                <span class="color-circle color-orange" title="Orange"></span>
+                <span class="color-circle color-black" title="Black"></span>
+                <span class="color-circle color-white" title="White"></span>
+              </div>
+              <button class="btn btn-outline-primary mt-auto w-100">Try-on</button>
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.41.08_79ba138a.jpg" alt="Classic Blue" class="product-image" />
+              <h5 class="mt-3">Classic Blue <span class="text-primary">$29</span></h5>
+              <p class="mb-1">Blue</p>
+              <div class="mb-2">
+                <span class="color-circle color-blue" title="Blue"></span>
+                <span class="color-circle color-black" title="Black"></span>
+              </div>
+              <button class="btn btn-outline-primary mt-auto w-100">Try-on</button>
+            </div>
+          </div>
+          <!-- Product 5 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.41.09_6ba68cd9.jpg" alt="Urban Gray" class="product-image" />
+              <h5 class="mt-3">Urban Gray <span class="text-primary">$41</span></h5>
+              <p class="mb-1">Gray</p>
+              <div class="mb-2">
+                <span class="color-circle color-gray" title="Gray"></span>
+                <span class="color-circle color-black" title="Black"></span>
+              </div>
+              <button class="btn btn-outline-primary mt-auto w-100">Try-on</button>
+            </div>
+          </div>
+          <!-- Product 6 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.41.46_3ee0594b.jpg" alt="Retro Brown" class="product-image" />
+              <h5 class="mt-3">Retro Brown <span class="text-primary">$37</span></h5>
+              <p class="mb-1">Brown</p>
+              <div class="mb-2">
+                <span class="color-circle color-brown" title="Brown"></span>
+                <span class="color-circle color-black" title="Black"></span>
+                <span class="color-circle color-white" title="White"></span>
+              </div>
+              <button class="btn btn-outline-primary mt-auto w-100">Try-on</button>
+            </div>
+          </div>
+          <!-- Product 7 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.41.49_2a0b3efd.jpg" alt="Green Edge" class="product-image" />
+              <h5 class="mt-3">Green Edge <span class="text-primary">$35</span></h5>
+              <p class="mb-1">Green</p>
+              <div class="mb-2">
+                <span class="color-circle color-green" title="Green"></span>
+                <span class="color-circle color-black" title="Black"></span>
+              </div>
+              <button class="btn btn-outline-primary mt-auto w-100">Try-on</button>
+            </div>
+          </div>
+          <!-- Product 8 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.41.49_f5d4496b.jpg" alt="Crystal Clear" class="product-image" />
+              <h5 class="mt-3">Crystal Clear <span class="text-primary">$48</span></h5>
+              <p class="mb-1">White</p>
+              <div class="mb-2">
+                <span class="color-circle color-white" title="White"></span>
+                <span class="color-circle color-black" title="Black"></span>
+              </div>
+              <button class="btn btn-outline-primary mt-auto w-100">Try-on</button>
+            </div>
+          </div>
+          <!-- Product 9 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.41.50_c2e50959.jpg" alt="Sunshine" class="product-image" />
+              <h5 class="mt-3">Sunshine <span class="text-primary">$27</span></h5>
+              <p class="mb-1">Orange</p>
+              <div class="mb-2">
+                <span class="color-circle color-orange" title="Orange"></span>
+                <span class="color-circle color-black" title="Black"></span>
+              </div>
+              <button class="btn btn-outline-primary mt-auto w-100">Try-on</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="container my-5">
+  <h2 class="mb-4 fw-bold">FAQ</h2>
+  <div class="accordion" id="faqAccordion">
+    <!-- Q1 -->
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="faqHeading1">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+          How do I buy prescription eyeglasses online?
+        </button>
+      </h2>
+      <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          Buying prescription eyeglasses from Eyebuydirect is easy. Simply select your frames, input your prescription details, and choose your lens options. Our streamlined process lets you upload your prescription or enter the details manually. We'll take care of the rest, delivering your new glasses right to your door.
+        </div>
+      </div>
+    </div>
+    <!-- Q2 -->
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="faqHeading2">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+          What lens options can I choose for my prescription eyeglasses?
+        </button>
+      </h2>
+      <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          We offer a variety of lens options including single vision, progressive, bifocal, blue light blocking, photochromic, and more. You can select your preferred lens type and additional coatings during the order process.
+        </div>
+      </div>
+    </div>
+    <!-- Q3 -->
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="faqHeading3">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+          Can I try on prescription eyeglasses before buying?
+        </button>
+      </h2>
+      <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          Yes! Our website offers a virtual try-on tool so you can see how different frames look on your face before making a purchase.
+        </div>
+      </div>
+    </div>
+    <!-- Q4 -->
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="faqHeading4">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+          Are prescription eyeglasses covered by insurance?
+        </button>
+      </h2>
+      <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          Many insurance plans offer reimbursement for prescription eyeglasses. Please check with your provider and request an itemized invoice from us for your claim.
+        </div>
+      </div>
+    </div>
+    <!-- Q5 -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="faqHeading5">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+          How long does it take to receive my prescription eyeglasses?
+        </button>
+      </h2>
+      <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          Once your prescription eyeglasses are ordered, you can expect them to ship within 7–14 business days. We provide tracking information, so you'll always know when to expect your new glasses. Shipping times may vary based on your location and order details.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+	  <!-- Newsletter Signup Section -->
+<section style="background: linear-gradient(90deg, #008080 0%, #00bfae 100%); color: #fff; padding: 40px 0;">
+  <div class="container text-center">
+    <h4 class="fw-bold mb-3">See our latest collections &amp; exclusive offers before the crowd!</h4>
+    <form class="d-flex justify-content-center mb-2" style="max-width: 480px; margin: 0 auto;">
+      <input type="email" class="form-control rounded-start" placeholder="Email" required>
+      <button type="submit" class="btn btn-light rounded-end" style="color: #008080; font-weight: 600;">&rarr;</button>
+    </form>
+    <div class="small mt-2" style="color: #e0f7fa;">
+      By subscribing, I confirm that I am over 16 years of age and agree that my personal data can be used to send me news, special offers, and other marketing communication. For more information, see our <a href="#" class="text-white text-decoration-underline">Terms &amp; Conditions</a> and <a href="#" class="text-white text-decoration-underline">Privacy Policy</a>.
+    </div>
+  </div>
+</section>
+	  <!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row">
+
+      <!-- Brand/Logo and Tagline -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h4 class="fw-bold">Vision Near</h4>
+        <p>Your trusted partner for eyewear and eye care solutions.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#about" class="text-white text-decoration-none">About</a></li>
+          <li><a href="#products" class="text-white text-decoration-none">Products</a></li>
+          <li><a href="#services" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="#location" class="text-white text-decoration-none">Locations</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Details & Social -->
+      <div class="col-md-4">
+        <h5 class="mb-3">Contact Us</h5>
+        <ul class="list-unstyled">
+          <li>Email: <a href="mailto:info@visionnear.com" class="text-white text-decoration-none">info@visionnear.com</a></li>
+          <li>Phone: <a href="tel:+919876543210" class="text-white text-decoration-none">+91 98765 43210</a></li>
+          <li>Address: 123 Main Road, Bengaluru, Karnataka 560001, India</li>
+        </ul>
+        <div class="mt-3">
+          <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary my-4">
+    <div class="text-center small">&copy; 2025 Vision Near. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Bootstrap Icons CDN (add in your <head> if not already included) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	  
+	  
+
+

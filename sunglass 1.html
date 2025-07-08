@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Select Your Sunglasses - Vision Near</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: #f6fafd; }
+    .navbar {
+      background: linear-gradient(90deg, #008080 0%, #00bfae 100%);
+    }
+    .navbar .navbar-brand, .navbar .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .filter-sidebar {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #eee;
+      min-height: 100%;
+    }
+    .promo-banner {
+      background: linear-gradient(90deg, #008080 0%, #00bfae 100%);
+      color: #fff;
+      border-radius: 10px;
+      padding: 28px 30px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .promo-banner img {
+      height: 80px;
+      border-radius: 8px;
+      margin-left: 24px;
+    }
+    .product-card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 18px;
+      background: #fff;
+      transition: box-shadow 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .product-card:hover {
+      box-shadow: 0 6px 24px rgba(0, 191, 255, 0.13);
+      transform: translateY(-4px);
+    }
+    .product-image {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #f0f0f0;
+      margin-bottom: 16px;
+    }
+    .heart-icon {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      color: #ccc;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+    .product-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .product-price {
+      color: #00bfae;
+      font-weight: 600;
+    }
+    .similar-btn {
+      background: #f6fafd;
+      border: none;
+      color: #008080;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 2px 14px;
+      font-size: 0.95rem;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 991px) {
+      .filter-sidebar { margin-bottom: 24px; }
+      .promo-banner { flex-direction: column; text-align: center; }
+      .promo-banner img { margin: 16px 0 0 0; }
+    }
+  </style>
+  <!-- Bootstrap icons for heart -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Vision Near</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#location">Locations</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h1 class="mb-4 text-left fw-bold" style="color:#008080;">Select Your Sunglasses</h1>
+    <div class="row">
+      <!-- Sidebar Filters -->
+      <div class="col-lg-3 mb-4">
+        <div class="filter-sidebar">
+          <h5 class="mb-3">Filters</h5>
+          <div class="mb-2"><strong>Gender</strong></div>
+          <div class="mb-2"><strong>Brands</strong></div>
+          <div class="mb-2"><strong>Size</strong></div>
+          <div class="mb-2"><strong>Shape</strong></div>
+          <div class="mb-2"><strong>Color</strong></div>
+          <div class="mb-2"><strong>Material</strong></div>
+          <div class="mb-2"><strong>Rim</strong></div>
+          <div class="mb-2"><strong>Price</strong></div>
+          <div class="mb-2"><strong>Fit</strong></div>
+        </div>
+      </div>
+      <!-- Main Content -->
+      <div class="col-lg-9">
+        <!-- Promo Banner -->
+        <div class="promo-banner mb-4">
+          <div>
+            <div class="fw-bold fs-5">Buy One Get One 65% Off</div>
+            <div>CODE: <span class="fw-bold">SPARK65</span></div>
+            <a href="#" class="btn btn-light btn-sm mt-2" style="color:#008080; font-weight:600;">Shop now</a>
+          </div>
+</div>
+        <!-- Sunglasses Grid -->
+        <div class="row g-4">
+          <!-- 1 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.55.49_0ada83d6.jpg" class="product-image" alt="Black Aviator" />
+              <div class="product-title">Black Aviator</div>
+              <div class="product-price">$45</div>
+              <i class="bi bi-heart heart-icon"></i>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.55.49_8c3492aa.jpg" class="product-image" alt="Yellow Round" />
+              <div class="product-title">Yellow Round</div>
+              <div class="product-price">$39</div>
+              <i class="bi bi-heart heart-icon"></i>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.55.49_75df2c5b.jpg" class="product-image" alt="Brown Retro" />
+              <div class="product-title">Brown Retro</div>
+              <button class="similar-btn">Similar Styles</button>
+              <div class="product-price">$42</div>
+              <i class="bi bi-heart heart-icon"></i>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.55.49_92b45baa.jpg" class="product-image" alt="Blue Wayfarer" />
+              <div class="product-title">Blue Wayfarer</div>
+              <div class="product-price">$47</div>
+              <i class="bi bi-heart heart-icon"></i>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.55.49_6680ac6d.jpg" class="product-image" alt="Clear Classic" />
+              <div class="product-title">Clear Classic</div>
+              <div class="product-price">$36</div>
+              <i class="bi bi-heart heart-icon"></i>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.55.49_32168928.jpg" class="product-image" alt="Red Cat Eye" />
+              <div class="product-title">Red Cat Eye</div>
+              <div class="product-price">$44</div>
+              <i class="bi bi-heart heart-icon"></i>
+            </div>
+          </div>
+          <!-- 7 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.55.49_b0655c85.jpg" class="product-image" alt="Green Sport" />
+              <div class="product-title">Green Sport</div>
+              <div class="product-price">$41</div>
+              <i class="bi bi-heart heart-icon"></i>
+            </div>
+          </div>
+          <!-- 8 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 12.55.49_edee040f.jpg" class="product-image" alt="Purple Oversize" />
+              <div class="product-title">Purple Oversize</div>
+              <div class="product-price">$52</div>
+              <i class="bi bi-heart heart-icon"></i>
+            </div>
+          </div>
+          <!-- 9 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="WhatsApp Image 2025-07-03 at 13.01.34_b771a454.jpg" class="product-image" alt="Orange Trendy" />
+              <div class="product-title">Orange Trendy</div>
+              <div class="product-price">$38</div>
+              <i class="bi bi-heart heart-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	<div class="container my-5">
+  <h2 class="mb-4 fw-bold">FAQ</h2>
+  <div class="accordion" id="faqAccordion">
+    <!-- Q1 -->
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="faqHeading1">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+          Can I choose polarized lenses for my sunglasses?
+        </button>
+      </h2>
+      <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          Yes! You can add polarized lenses to any pair of sunglasses. Polarized lenses reduce glare from reflective surfaces, making them perfect for outdoor activities like driving, fishing, or skiing. They improve clarity and comfort, ensuring you can enjoy clear, distortion-free vision while protecting your eyes.
+        </div>
+      </div>
+    </div>
+    <!-- Q2 -->
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="faqHeading2">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+          How do I know which sunglasses are right for my face?
+        </button>
+      </h2>
+      <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          <!-- You can fill this answer as needed -->
+        </div>
+      </div>
+    </div>
+    <!-- Q3 -->
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="faqHeading3">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+          What lens colors are available for sunglasses?
+        </button>
+      </h2>
+      <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          <!-- You can fill this answer as needed -->
+        </div>
+      </div>
+    </div>
+    <!-- Q4 -->
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="faqHeading4">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+          Are sunglasses with larger lenses better for sun protection?
+        </button>
+      </h2>
+      <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          <!-- You can fill this answer as needed -->
+        </div>
+      </div>
+    </div>
+    <!-- Q5 -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="faqHeading5">
+        <button class="accordion-button fs-5 fw-semibold collapsed bg-white px-0" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+          Can I return sunglasses if they don't fit?
+        </button>
+      </h2>
+      <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
+        <div class="accordion-body px-0">
+          <!-- You can fill this answer as needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section style="background: linear-gradient(90deg, #008080 0%, #00bfae 100%); color: #fff; padding: 40px 0;">
+  <div class="container text-center">
+    <h4 class="fw-bold mb-3">See our latest collections &amp; exclusive offers before the crowd!</h4>
+    <form class="d-flex justify-content-center mb-2" style="max-width: 480px; margin: 0 auto;">
+      <input type="email" class="form-control rounded-start" placeholder="Email" required>
+      <button type="submit" class="btn btn-light rounded-end" style="color: #008080; font-weight: 600;">&rarr;</button>
+    </form>
+    <div class="small mt-2" style="color: #e0f7fa;">
+      By subscribing, I confirm that I am over 16 years of age and agree that my personal data can be used to send me news, special offers, and other marketing communication. For more information, see our <a href="#" class="text-white text-decoration-underline">Terms &amp; Conditions</a> and <a href="#" class="text-white text-decoration-underline">Privacy Policy</a>.
+    </div>
+  </div>
+</section>
+	  <!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row">
+
+      <!-- Brand/Logo and Tagline -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h4 class="fw-bold">Vision Near</h4>
+        <p>Your trusted partner for eyewear and eye care solutions.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#about" class="text-white text-decoration-none">About</a></li>
+          <li><a href="#products" class="text-white text-decoration-none">Products</a></li>
+          <li><a href="#services" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="#location" class="text-white text-decoration-none">Locations</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Details & Social -->
+      <div class="col-md-4">
+        <h5 class="mb-3">Contact Us</h5>
+        <ul class="list-unstyled">
+          <li>Email: <a href="mailto:info@visionnear.com" class="text-white text-decoration-none">info@visionnear.com</a></li>
+          <li>Phone: <a href="tel:+919876543210" class="text-white text-decoration-none">+91 98765 43210</a></li>
+          <li>Address: 123 Main Road, Bengaluru, Karnataka 560001, India</li>
+        </ul>
+        <div class="mt-3">
+          <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary my-4">
+    <div class="text-center small">&copy; 2025 Vision Near. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Bootstrap Icons CDN (add in your <head> if not already included) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	  
+	  
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

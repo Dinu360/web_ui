@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vision Near - Loading</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: linear-gradient(90deg, #008080 0%, #00bfae 100%);
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .splash-content {
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1.2s;
+    }
+    .splash-title {
+      font-size: 2.7rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+    .dot-loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      box-shadow: 0 0 0 0 #00bfae;
+      animation: dotFlare 1s infinite;
+      opacity: 0.7;
+    }
+    .dot:nth-child(1) { animation-delay: 0s; }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+    .dot:nth-child(4) { animation-delay: 0.6s; }
+    .dot:nth-child(5) { animation-delay: 0.8s; }
+
+    @keyframes dotFlare {
+      0%   { background: rgba(255,255,255,0.35); opacity: 0.7; box-shadow: 0 0 0 0 #00bfae;}
+      30%  { background: #fff; opacity: 1; box-shadow: 0 0 10px 2px #00bfae;}
+      100% { background: rgba(255,255,255,0.35); opacity: 0.7; box-shadow: 0 0 0 0 #00bfae;}
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeOut {
+      from { opacity: 1;}
+      to   { opacity: 0;}
+    }
+    .hidden {
+      display: none !important;
+    }
+    .fade-out {
+      animation: fadeOut 0.8s forwards;
+    }
+    /* Main website content hidden initially */
+    #main-content { display: none; }
+  </style>
+</head>
+<body>
+  <!-- Splash/Loader -->
+  <div class="splash-content" id="splash">
+    <div class="splash-title">Vision Near</div>
+    <div class="dot-loader">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <!-- Main Website Content -->
+  <div id="main-content">
+    <!-- Replace below with your actual homepage content -->
+    <div class="container text-center py-5">
+      <h1 class="display-3 fw-bold" style="color:#008080;">Welcome to Vision Near</h1>
+      <p class="lead"><strong>Your Eyes , Our Focus....</strong>&nbsp;</p>
+    </div>
+  </div>
+
+  <script>
+    // After 2.5 seconds, fade out splash and show main content
+    setTimeout(function() {
+      const splash = document.getElementById('splash');
+      splash.classList.add('fade-out');
+      setTimeout(function() {
+        splash.classList.add('hidden');
+        document.getElementById('main-content').style.display = 'block';
+      }, 800); // matches fadeOut animation duration
+    }, 2500);
+  </script>
+</body>
+</html>
